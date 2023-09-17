@@ -1,0 +1,297 @@
+<html>
+    <head>
+        <title>Kota Surabaya Ter-Cinta</title>
+        <link rel="stylesheet" href="../aset sby/aset sby.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript">
+            (function() {
+        
+        function Slideshow( element ) {
+            this.el = document.querySelector( element );
+            this.init();
+        }
+        
+        Slideshow.prototype = {
+            init: function() {
+                this.wrapper = this.el.querySelector( ".slider-wrapper" );
+                this.slides = this.el.querySelectorAll( ".slide" );
+                this.index = 0;
+                this.total = this.slides.length;
+                this.timer = null;
+                
+                this.action();
+                this.stopStart();	
+            },
+            _slideTo: function( slide ) {
+                var currentSlide = this.slides[slide];
+                currentSlide.style.opacity = 1;
+                
+                for( var i = 0; i < this.slides.length; i++ ) {
+                    var slide = this.slides[i];
+                    if( slide !== currentSlide ) {
+                        slide.style.opacity = 0;
+                    }
+                }
+            },
+            action: function() {
+                var self = this;
+                self.timer = setInterval(function() {
+                    self.index++;
+                    if( self.index == self.slides.length ) {
+                        self.index = 0;
+                    }
+                    self._slideTo( self.index );
+                    
+                }, 3000);
+            },
+            stopStart: function() {
+                var self = this;
+                self.el.addEventListener( "mouseover", function() {
+                    clearInterval( self.timer );
+                    self.timer = null;
+                    
+                }, false);
+                self.el.addEventListener( "mouseout", function() {
+                    self.action();
+                    
+                }, false);
+            }
+            
+            
+        };
+        
+        document.addEventListener( "DOMContentLoaded", function() {
+            
+            var slider = new Slideshow( "#slider-utama" );
+            
+        });
+        
+        
+    })();
+    
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="jumbotron">
+            <h1>Surabaya</h1>
+                <p>Ibu kota Provinsi Jawa Timur, Indonesia, sekaligus kota metropolitan terbesar di provinsi tersebut.</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="Sejarah">Sejarah</a></li>
+                    <li><a href="#Geografis">Geografis</a></li>
+                    <li><a href="#Pemerintahan">Pemerintahan</a></li>
+                    <li><a href="#Perekonomian">Perekonomian</a></li>
+                    <li><a href="#Kuliner">Kuliner</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div id="isi">
+            <article id="Sejarah" class="border">
+                <h2>Sejarah</h2>
+                <img src="../aset sby/Sejarah.jpg" alt="sejarah" class="center">
+                <figcaption class="center">Surabaya Kota Lama</figcaption>
+                <p>Cerita Sejarah Kota Surabaya kental dengan nilai kepahlawanan. Sejak awal berdirinya, kota ini memiliki 
+                    sejarah panjang yang terkait dengan nilai-nilai heroisme. Istilah Surabaya terdiri dari kata sura (berani) 
+                    dan baya (bahaya), yang kemudian secara harfiah diartikan sebagai berani menghadapi bahaya yang datang. Nilai 
+                    kepahlawanan tersebut salah satunya mewujud dalam peristiwa pertempuran antara Raden Wijaya dan Pasukan Mongol 
+                    pimpinan Kubilai Khan di tahun 1293. Begitu bersejarahnya pertempuran tersebut hingga tanggalnya diabadikan menjadi 
+                    tanggal berdirinya Kota Surabaya hingga saat ini, yaitu 31 Mei. </p>
+                <p>Heroisme masyarakat Surabaya paling tergambar dalam pertempuran 10 Nopember 1945. Arek-arek Suroboyo, sebutan untuk 
+                    orang Surabaya, dengan berbekal bambu runcing berani melawan pasukan sekutu yang memiliki persenjataan canggih. Puluhan 
+                    ribu warga meninggal membela tanah air. Peristiwa heroik ini kemudian diabadikan sebagai peringatan Hari Pahlawan. 
+                    Sehingga membuat Surabaya dilabeli sebagai Kota Pahlawan.</p>
+                <p>Sejarah Surabaya juga berkaitan dengan aktivitas perdagangan. Secara geografis Surabaya memang diciptakan sebagai 
+                    kota dagang dan pelabuhan. Surabaya merupakan pelabuhan gerbang utama Kerajaan Majapahit. Letaknya yang dipesisir 
+                    utara Pulau Jawa membuatnya berkembang menjadi sebuah pelabuhan penting di zaman Majapahit pada abad ke - 14.</p>
+                <p>Berlanjut pada masa kolonial, letak geografisnya yang sangat strategis membuat pemerintah Kolonial Belanda pada abad 
+                    ke - 19, memposisikannya sebagai pelabuhan utama yang berperan sebagai collecting centers dari rangkaian terakhir kegiatan 
+                    pengumpulan hasil produksi perkebunan di ujung Timur Pulau Jawa, yang ada di daerah pedalaman untuk diekspor ke Eropa.</p>
+            </article>
+
+            <article id="Geografis" class="border">
+                <h2>Geografis</h2>
+                <img src="../aset sby/geografis.png" class="center" alt="geografis">
+                <figcaption class="center">Peta Surabaya</figcaption>
+                <p>Surabaya terletak di daerah Pantai Utara, Provinsi Jawa Timur. Secara geografis, terletak di 7°9′- 7°21′ 
+                    Lintang Selatan dan 112° 36′ – 112° 54′ Bujur Timur. Kota Surabaya berbatasan dengan Selat Madura di utara dan timur, 
+                    Kabupaten Sidoarjo di selatan, dan Kabupaten Gresik di barat.</p>
+                <p>Kota Surabaya memiliki luas 33.306,30 Ha. Sebagian besar wilayahnya berupa dataran rendah, dengan ketinggian antara 3 – 6 
+                    meter di atas permukaan air laut (dataran rendah), kecuali di bagian selatan terdapat dua bukit landai di daerah Lidah & 
+                    Gayungan dengan ketinggian 25 – 50 meter di atas permukaan air laut. Di Surabaya juga terdapat muara Sungai Kalimas, salah 
+                    satu dari dua pecahan Sungai Brantas.</p>
+                <p>Secara administratif, Surabaya dibagi menjadi 160 kelurahan dan 31 kecamatan (yang terbagi ke dalam 5 wilayah) dengan jumlah 
+                    penduduk mencapai 2,9 juta orang pada malam hari dan mencapai 5,6 juta orang pada siang hari karena banyak orang yang 
+                    datang dari kota-kota tetangga yang bekerja di Surabaya.</p>
+                <p>Surabaya merupakan kota multi etnis yang kaya budaya. Beragam etnis ada di Surabaya, seperti etnis Melayu, Cina, India, 
+                    Arab, dan Eropa. Etnis Nusantara pun dapai dijumpai, seperti Madura, Sunda, Batak, Kalimantan, Bali, Sulawesi yang membaur 
+                    dengan penduduk asli Surabaya membentuk pluralisme budaya yang selanjutnya menjadi ciri khas kota Surabaya. Sebagian besar 
+                    masyarakat Surabaya adalah orang Surabaya asli dan orang Madura.</p>
+            </article>
+            
+            <article id="Pemerintahan" class="border">
+                <h2>Pemerintahan</h2>
+                <img src="../aset sby/Balkot.jpg" class="center" alt="Balai Kota">
+                <figcaption class="center">Balai Kota Surabaya</figcaption>
+                <p>Dasar hukum bagi kota Surabaya adalah Undang-Undang Republik Indonesia Nomor 12 Tahun 1950, tentang Pemerintahan 
+                    Daerah Kabupaten/Kota Di Jawa Timur. Surabaya berstatus sebagai kota yang menjadi bagian dari provinsi Jawa Timur.</p>
+                <h3>Kepala Daerah</h3>
+                <img style="float: right; margin: 0px 15px 15px 0px;" src="../aset sby/Wali_Kota_Eri.jpg" width="150" />
+                <p>Surabaya dipimpin oleh seorang wali kota dan didampingi oleh seorang wakil wali kota. Wali Kota Surabaya saat ini adalah Eri Cahyadi, 
+                    yang menjabat sejak 26 Februari 2021. Ia didampingi oleh Wakil Wali Kota Armuji.</p>
+                    <br><br><br><br>
+                <h3>Pertahanan dan Keamanan</h3>
+                <p>Surabaya merupakan markas besar dari Kodam V/Brawijaya yang merupakan komando kewilayahan pertahanan dari TNI Angkatan Darat 
+                    di wilayah Provinsi Jawa Timur. Wilayah satuan teritorial Kodam V/Brawijaya di wilayah Surabaya adalah Korem 084/Bhaskara Jaya 
+                    yang terbagi atas beberapa Kodim, yaitu Surabaya Utara ; Surabaya Timur ; Surabaya Selatan ; Sidoarjo ; Gresik ; Bangkalan ; 
+                    Sampang; Pamekasan dan Sumenep. Seluruh Kodim tersebut kemudian dibagi lagi menjadi beberapa Koramil yang berada di tingkat 
+                    kecamatan. Kota Surabaya juga merupakan markas besar dari Komando Armada II yang berpusat di Pelabuhan Tanjung Perak, Surabaya. 
+                    Komando Armada II TNI Angkatan Laut membawahi wilayah laut Indonesia bagian tengah. Bumi Marinir terdapat di wilayah Kecamatan 
+                    Karang Pilang, Surabaya. Kawasan TNI AU terdapat di Lanud Muljono Surabaya.</p>
+                <p>Markas besar Polda Jawa Timur juga terdapat di Surabaya. Wilayah hukum Polda Jawa Timur yang ada di wilayah kota Surabaya 
+                    adalah satu kepolisian resor kota besar, yaitu Kepolisian Resor Kota Besar Surabaya (Polrestabes Surabaya) yang membawahi 
+                    23 kepolisian sektor kota, serta satu kepolisian resor yang terdiri dari unsur Kesatuan Pelaksanaan Pengamanan Pelabuhan 
+                    (KP3) di wilayah Pelabuhan Tanjung Perak, yaitu Kepolisian Resor Kesatuan Pelaksanaan Pengamanan Pelabuhan Tanjung Perak 
+                    (Polres KP3 Tanjung Perak) yang membawahi 5 kepolisian sektor yakni Polsek Asemrowo ; Polsek Kenjeran ; Polsek Krembangan ; 
+                    Polsek Pabean Cantian ; dan Polsek Semampir.</p>
+            </article>
+
+            <article id="Perekonomian" class="border">
+                <h2>Perekonomian</h2>
+                <img src="../aset sby/Downtown_of_Central_Surabaya.jpg" class="center" alt="Perekonomian">
+                <figcaption class="center">Perekonomian Kota Surabaya</figcaption>
+                <p>Letak Kota Surabaya yang sangat strategis berada hampir di tengah wilayah Indonesia dan tepat di selatan Asia menjadikannya 
+                    sebagai salah satu hub penting bagi kegiatan perdagangan di Asia Tenggara. Sebagai kota metropolitan, Surabaya menjadi 
+                    pusat kegiatan ekonomi, keuangan, dan bisnis di daerah Jawa Timur dan sekitarnya. Sebagai salah satu pusat perdagangan, 
+                    Surabaya tidak hanya menjadi pusat perdagangan bagi wilayah Jawa Timur, namun juga memfasilitasi wilayah-wilayah di Jawa 
+                    Tengah, Kalimantan, dan kawasan Indonesia Timur. Surabaya dan kawasan sekitarnya merupakan kawasan yang paling pesat 
+                    pembangunan ekonominya di Jawa Timur dan salah satu yang paling maju di Indonesia.</p>
+                <p>Selain itu, Surabaya juga merupakan salah satu kota terpenting dalam menopang perekonomian Indonesia. Sebagian besar 
+                    penduduknya bergerak dalam bidang jasa, industri, dan perdagangan. Surabaya adalah pusat perdagangan yang mengalami 
+                    perkembangan pesat. Industri-industri utamanya antara lain galangan kapal, alat-alat berat, pengolahan makanan dan 
+                    agrikultur, elektronik, perabotan rumah tangga, serta kerajinan tangan. Banyak perusahaan multinasional besar yang 
+                    berkantor pusat di Surabaya, seperti PT Sampoerna Tbk; Wismilak; Maspion; Wings Group; Unilever Indonesia; Pakuwon Group; 
+                    Jawa Pos Group; dan PT PAL Indonesia.</p>
+                <p>Surabaya juga merupakan kota pelabuhan terbesar kedua di Indonesia setelah Jakarta. Pelabuhan terpenting di Surabaya adalah 
+                    Pelabuhan Tanjung Perak yang merupakan pelabuhan perdagangan, peti kemas, dan penumpang terbesar kedua di Indonesia setelah 
+                    Pelabuhan Tanjung Priok di Jakarta. Di Surabaya juga terdapat Terminal Pelabuhan Teluk Lamong yang merupakan terminal 
+                    pelabuhan penyangga utama Pelabuhan Tanjung Perak. Terminal Pelabuhan Teluk Lamong ini menjadi green port pertama di 
+                    Indonesia serta merupakan salah satu terminal pelabuhan tercanggih di dunia di mana seluruh sistem operasinya otomatis dan 
+                    menggunakan komputer.</p>
+                <h3>Kawasan Pusat Bisnis</h3>
+                <p>Dalam kurun waktu 2 dekade, Surabaya dan kota-kota satelit di sekitarnya telah mempunyai andil finansial yang vital di 
+                    Indonesia dikarenakan sektor perdagangan, industri, dan jasanya yang terus berkembang. Hal ini kemudian menyebabkan daya 
+                    beli masyarakat meningkat dan indeks kepercayaan konsumen yang berkembang pesat. Hal ini tentunya menarik minat investor 
+                    untuk ikut andil dalam perubahan wajah kota, sehingga mendorong munculnya "Kawasan Bisnis Terpadu" / Central Business 
+                    District (CBD) sebagai pusat-pusat kegiatan bisnis di Surabaya. Kawasan bangunan tinggi (highrise building) berada di 
+                    sekitar Jalan Tunjungan, Basuki Rachmat, Darmo, Mayjend Sungkono, H.R. Muhammad, dan Ahmad Yani, sedangkan kawasan industri 
+                    di Surabaya di antaranya adalah Surabaya Industrial Estate Rungkut (SIER), Karang Pilang dan Margomulyo. Berikut ini adalah 
+                    beberapa kawasan CBD yang termasuk ke dalam kawasan emas di kota Surabaya:</p>
+                <h4>Kawasan Pusat Bisnis Surabaya Pusat</h4>
+                <img style="float: left; margin: 0px 15px 15px 0px;" src="../aset sby/Panorama_of_Surabaya_(9_September_2019).jpg" width="350" />
+                <p>Kawasan ini terletak di sekitar Jalan Basuki Rachmat, Jalan Embong Malang, dan Jalan Bubutan. Kawasan ini telah berkembang 
+                    sebagai pusat bisnis di wilayah Jawa Timur sejak 3 dekade lalu dan menjadi salah satu jantung utama kegiatan bisnis dan 
+                    perdagangan di Surabaya. Beberapa ciri khas bangunan yang ada di kawasan ini di antaranya adalah Wisma BRI Surabaya, Hotel 
+                    Bumi Surabaya, Wisma Intiland Surabaya, Pakuwon Tower, The Peak Residence, Sheraton Hotel, dan lain sebagainya.</p>
+                    <br>
+                <h4>Kawasan Pusat Bisnis Surabaya Barat</h4>
+                <img style="float: right; margin: 0px 15px 15px 10px;" src="../aset sby/Western_Surabaya_at_dusk_(late_2015).jpg" width="250" />
+                <p>Kawasan ini terletak di sekitar Jalan Mayjend Sungkono, Jalan Adityawarman, Jalan H.R. Muhammad, dan Jalan Bukit Darmo. 
+                    Kawasan ini berkembang sebagai pusat bisnis baru di Surabaya sejak tahun 1990-an. Dahulu, kawasan ini dikenal sebagai 
+                    salah satu kawasan mati yang tidak berkembang di wilayah Surabaya. Namun, saat ini telah berkembang sebagai salah satu 
+                    kawasan pusat bisnis dan perdagangan yang paling pesat perkembangannya di wilayah Jawa Timur, dengan berdirinya highrise 
+                    building dan perumahan-perumahan elite yang tertata rapi di kawasan ini. Beberapa ciri khas bangunan yang ada di kawasan 
+                    ini di antaranya adalah Adhiwangsa Apartment, Waterplace Residence, Puri Matahari, Beverly Park Apartment, The Via & The 
+                    Vue Apartment, Ciputra World Hotel, La Riz Mansion, Orchard & Tanglin Apartment, Puncak Permai Apartment, dan lain 
+                    sebagainya.</p>
+                    <br><br><br>
+            </article>
+
+            <article id="Kuliner" class="border">
+                <h2>Kuliner</h2>
+                <h3>Masakan</h3>
+                    <ul>
+                        <li>Lontong Balap</li>
+                        <li>Tahu Tek</li>
+                        <li>Krengsengan</li>
+                        <li>Tempe Penyet</li>
+                        <li>Lontong Mie</li>
+                        <li>Kupang Lontong</li>
+                        <li>Rawon</li>
+                        <li>Tahu Campur</li>
+                        <li>Sop Kikil</li>
+                        <li>Sup buntut</li>
+                        <li>Kari Kambing</li>
+                        <li>Bakwan Surabaya</li>
+                        <li>Nasi Sayur</li>
+                        <li>Nasi Goreng Jawa</li>
+                        <li>Bakso</li>
+                    </ul>
+                <h3>Minuman</h3>
+                <ul>
+                    <li>Angsle</li>
+                    <li>Ronde</li>
+                    <li>Tahwa</li>
+                    <li>STMJ</li>
+                </ul>
+            </article>
+            </div>
+            <aside>
+                <article class="border">
+                    <header>
+                        <h2>Kota Surabaya</h2>
+                        <p class="center">Kota Pahlawan</p>
+            <figure>
+                <img src="../aset sby/78px-City_of_Surabaya_Logo.svg.png" class="center" alt="logo">
+                <figcaption class="center">Lambang</figcaption>
+              </figure>
+              </header>
+                <section>
+                    <h3>Informasi Lainnya</h3>
+                    <table>
+                       <tr>
+                          <th>Negara</th>
+                          <td>Indonesia</td>
+                       </tr>
+                       <tr>
+                          <th>Hari jadi</th>
+                          <td>31 Mei 1293</td>
+                       </tr>
+                       <tr>
+                          <th>Luas Total</th>
+                          <td>350,54 km<sup>2</sup></td>
+                       </tr>
+                       <tr>
+                          <th>Bahasa Daerah</th>
+                          <td>Jawa</td>
+                       </tr>
+                          <tr>
+                          <th>Kode Telepon</th>
+                          <td>+62 031</td>
+                       </tr>
+                   </table>
+                 </section>
+                 <br>
+                <article>
+                    <img src="/aset sby/Brendan TM.jpg" class="center">
+                    <figcaption class="center">Brendan Timothy Mannuel</figcaption>
+                </article>
+            </article>
+                </aside>
+        </main>
+        <div class="container" id="slider-utama">
+            <div class="slider-wrapper">
+                <img src="../aset sby/Sejarah.jpg" class="slide" />
+                <img src="../aset sby/geografis.png" class="slide" />
+                <img src="../aset sby/Balkot.jpg" class="slide" />
+                <img src="../aset sby/Downtown_of_Central_Surabaya.jpg" class="slide" />
+                <img src="../aset sby/Panorama_of_Surabaya_(9_September_2019).jpg" class="slide">
+            </div>
+        </div>
+        <footer>
+            &copy; Brendan Timothy Mannuel, Institut Teknologi Sepuluh Nopember
+        </footer>
+    </body>
+</html>
